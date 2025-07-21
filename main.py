@@ -9,6 +9,16 @@ import os
 TOKEN = os.getenv("DISCORD_TOKEN")
 CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 CG_KEY = os.getenv("CG_KEY")
+import os
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+CHANNEL_ID = os.getenv("CHANNEL_ID")
+CG_KEY = os.getenv("CG_KEY")
+
+if not TOKEN or not CHANNEL_ID or not CG_KEY:
+    raise ValueError("❌ 環境變數設定錯誤，請確認 DISCORD_TOKEN、CHANNEL_ID、CG_KEY 已正確設定！")
+
+CHANNEL_ID = int(CHANNEL_ID)
 
 
 CG_API = "https://open-api-v4.coinglass.com/api"
