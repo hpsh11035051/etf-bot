@@ -4,9 +4,12 @@ import aiohttp
 from datetime import datetime
 
 # ====== 你的設定 ======
-TOKEN = "你的 Discord Bot Token"       # ⚠️ 換成你的 Bot Token
-CHANNEL_ID = 1234567890                # ⚠️ 換成你的頻道 ID (整數)
-CG_KEY = "你的 CoinGlass API Key"      # ⚠️ 換成你的 CoinGlass API Key
+import os
+
+TOKEN = os.getenv("DISCORD_TOKEN")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
+CG_KEY = os.getenv("CG_KEY")
+
 
 CG_API = "https://open-api-v4.coinglass.com/api"
 HEADERS = {"coinglass-secret": CG_KEY}
